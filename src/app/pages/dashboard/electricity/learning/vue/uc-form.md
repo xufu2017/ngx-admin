@@ -86,3 +86,19 @@ v-model should be set on select tag and it will override the selected in option
   }); -- v-highlight
   
   
+## event bus
+
+export const eventbus=new Vue({ -- need to be before the main vue declaration
+  methods:{
+    changeAge(age){
+      this.$emit('agewasEdited',age);
+})
+
+eventbus.$emit('ageedited',this.userage)
+
+in the component, need import -- import {eventbus} from '../main'; 
+
+created(){
+eventbus.$on('ageedited',(age)=>{
+  this.userAge=age;
+  });
