@@ -34,7 +34,17 @@ can use readonly in property -- only update the first level
 
 ReadonlyArray to make array not updatable
 
+type user= {
+name: string;
+age?:number;
+gender?:string;}
 
+--required will make the ? fields requiured as well
+const user:Required<User>={
+  ...,
+  age..
+  gender..
+  }
 
 
 
