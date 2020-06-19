@@ -47,8 +47,35 @@ const user:Required<User>={
   }
 
 
+--Null object patttern
+legalCase.documents = legalCase.documents || [];
 
 
+--speical case:
+
+refactor function using enum to using interface class base approach
+
+## shorten the if using const veriable
+
+## validation check using pipleline
+
+class ConditionsPipe {
+private _conditions: IPipeableCondition[];
+constructor(conditions: IPipeableCondition[]) {
+this._conditions = conditions;
+}
+check(): boolean {
+return this._conditions.every(p => p.check());
+}
+}
+
+const strategies: Function[] = [];
+strategies[OrderStatus.Pending] = this.processPendingOrder;
+strategies[OrderStatus.Shipped] = this.processShippedOrder;
+strategies[OrderStatus.Cancelled] = this.processCancelledOrder;
+strategies[OrderStatus.Returned] = this.processReturnedOrder;
+// Execute the appropriate strategy.
+strategies[order.getStatus()]();
 
 
 
