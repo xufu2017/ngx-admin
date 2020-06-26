@@ -67,3 +67,17 @@ methods: {
 }
 
 expect(wrapper.vm.$data.infoShown).toBeTruthy();
+
+set data and property
+
+describe("Properties", () => {
+			  it("returns the string in normal order if reversed property is not true", () => {
+			    cmp.setData({ inputValue: "Yoo" });
+			    expect(cmp.vm.reversedInput).toBe("Yoo");
+			  });
+			  it("returns the reversed string if reversed property is true", () => {
+			    cmp.setData({ inputValue: "Yoo" });
+			    cmp.setProps({ reversed: true });
+			    expect(cmp.vm.reversedInput).toBe("ooY");
+			  });
+			});
