@@ -34,6 +34,14 @@ handlers = handlers.map(handler =>
  (unregister(handler), register(handler.item))
 );
 
+
+But since arrow functions can’t be constructors, they don’t get a prototype property:
+function traditional() {
+}
+const arrow = () => {
+};
+console.log("prototype" in traditional); // true
+console.log("prototype" in arrow); // false
 const a = ["Joe", "Mohammed", "María"];
 const b = a.map(name => {name: name}); // Doesn't work
 console.log(b);
