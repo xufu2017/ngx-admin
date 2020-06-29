@@ -35,6 +35,11 @@ handlers = handlers.map(handler =>
 );
 
 
+And unlike some other languages, you can also provide a default for type but not for duration:
+function animate(type = "fadeout", duration) {
+ // ...do the work...
+}
+
 But since arrow functions can’t be constructors, they don’t get a prototype property:
 function traditional() {
 }
