@@ -1,10 +1,6 @@
 {
     "searchCriteria":"leeds",
-     "currentPage":1,
-    "itemsPerPage":5,
-    "totalItems":0,
-    "sortColumn":1,
-    "sortDirection":"Ascending",
+     
     "pageNumber":1,
     "pageSize":15,
     "totalRows":0
@@ -12,11 +8,6 @@
 
 {
     "SearchCriteria": "leeds",
-    "CurrentPage": 1,
-    "ItemsPerPage": 5,
-    "TotalItems": 0,
-    "SortColumn": null,
-    "SortDirection": "Ascending",
     "PageNumber": 1,
     "PageSize": 15,
     "TotalRows": 135,
