@@ -1,4 +1,32 @@
-    export default interface ControlSchema {
+function toCamel(s: string): string {
+  return s.charAt(0).toLowerCase() + s.slice(1);
+}
+
+function keysToCamel(o: any): any {
+  if (o === Object(o) && !Array.isArray(o) && typeof o !== "function") {
+    const n = {};
+    Object.keys(o).forEach((k) => {
+      n[toCamel(k)] = keysToCamel(o[k]);
+    });
+    return n;
+  } else if (Array.isArray(o)) {
+    return o.map((i) => {
+      return keysToCamel(i);
+    });
+  }
+  return o;
+}
+
+export function camelCase(json: any) {
+  return keysToCamel(JSON.parse(JSON.stringify(json).replace(/null/g, "")));
+}
+
+private data2 = camelCase(json2);
+private data2 = (json as unknown) as Array<ControlSchema>;
+  
+  
+
+export default interface ControlSchema {
   id: number;
   name: string;
   options: Array<SelectOption>;
