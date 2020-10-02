@@ -1,3 +1,22 @@
+const { InjectManifest } = require('workbox-webpack-plugin')
+module.exports = {
+  pwa: {
+    name: 'Assets Damp Logging',
+    themeColor: '#F15C76',
+    msTileColor: '#F15C76',
+    appleMobileWebAppCapable: 'yes',
+    appleMobileWebAppStatusBarStyle: 'black',
+  },
+  configureWebpack: {
+    plugins: [
+      new InjectManifest({
+        swSrc: "./src/service-worker.js",
+        swDest: "service-worker.js"
+      })
+    ]
+  }
+}
+
 {
   "name": "ngx-admin",
   "version": "4.0.1",
