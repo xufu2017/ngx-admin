@@ -76,3 +76,80 @@ Visit [our homepage](http://akveo.com/) or simply leave us a message to [contact
 ### From Developers
 Made with :heart: by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get the latest news first!
 We're always happy to receive your feedback!
+
+import App from "@/App.vue";
+import { RouterLinkStub } from "@vue/test-utils";
+import { mountComponentWithStore, setDefaultMock } from "../utils";
+
+describe('app.vue', () => {
+    const RouterView = {
+        name: 'router-View',
+        render: function (h: any) {
+            return h('div')
+        },
+        props: ['name']
+    }
+    let mockStore:any;
+
+    beforeEach(() => {
+        mockStore = {
+            modules: {
+                dampReport: {
+                    actions: {
+                        updateDampComponent: jest.fn(),
+                        updatePage: jest.fn(),
+                    },
+                    getters: {
+                        userFillingOutForm: jest.fn(),
+                        showNavigation:jest.fn(),
+                        visibleNavigation:jest.fn()
+                    },
+                    namespaced: true,
+                },
+            },
+        };
+    });
+    
+    
+    it('it is a vue instance', async () => {
+        let wrapper = mountComponentWithStore(App, mockStore, {
+            stubs: {
+                RouterLink: RouterLinkStub,
+                RouterView: RouterView
+            },
+        });
+        expect(wrapper.isVueInstance).toBeTruthy();
+        await expect(wrapper.findComponent({ name: "Navigation" }).exists()).toBeTruthy();
+        await expect(wrapper.findComponent({ name: "PhotosPanel" }).exists()).toBeTruthy();
+    });
+
+    it('set online true', async () => {
+        Object.defineProperty(navigator, 'onLine', { value: true, writable: true });
+
+        let wrapper = mountComponentWithStore(App, mockStore, {
+            stubs: {
+                RouterLink: RouterLinkStub,
+                RouterView: RouterView
+            },
+        });
+
+        expect(wrapper.vm.$data.onlineStatus).toBeTruthy();
+
+    });
+
+    
+    it('set online false', async () => {
+        Object.defineProperty(navigator, 'onLine', { value: false, writable: true });
+
+        let wrapper = mountComponentWithStore(App, mockStore, {
+            stubs: {
+                RouterLink: RouterLinkStub,
+                RouterView: RouterView
+            },
+        });
+        
+        expect(wrapper.vm.$data.onlineStatus).toBeFalsy();
+    });
+
+    
+});
