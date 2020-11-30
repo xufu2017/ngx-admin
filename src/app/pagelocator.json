@@ -1,0 +1,62 @@
+{
+  "homepage": {
+    "searchFilter": "#searchFilter",
+    "CompletionStatus": {
+      "all": "#formsCompletion1",
+      "completed": "#formsCompletion2",
+      "inProgress": "#formsCompletion3",
+      "Incomplete": "#formsCompletion4"
+    },
+    "layout": {
+      "block": "#app > main > section > div > section > div",
+      "layoutbar": ".has-layout-preference-buttons",
+      "content": "div.flex-1 > ul > li:nth-child(1)",
+      "header": "header",
+      "information": "section > div > p",
+      "viewButton": "footer > a"
+    },
+    "pagination": {
+      "block": "div.has-pagination",
+      "lable": "label",
+      "previous": "ul > li:nth-child(1) > button",
+      "active": "ul > li.page-item.active",
+      "next": "ul > li:nth-child(3) > button"
+    },
+    "nav": {
+      "content": "#app > nav",
+      "username": "div.user-details > div > p",
+      "logout": "section > button",
+      "viewAllForms": "ul > li:nth-child(1) > a",
+      "myCompleteForms": "ul > li:nth-child(2) > a",
+      "actionCenter": "ul > li:nth-child(3) > a",
+      "createForm": "div.cta-container > div > div > a"
+    }
+  },
+  "createForm": {
+    "completeFormButton": "ul > li:nth-child(2) > a > div",
+    "createFormButton": "div.cta-container > div > button",
+    "formNameField": "#formName",
+    "selectFormType": "#app > main > section > div > section > div > div.content > div > div:nth-child(4) > label",
+    "formType": "#formType",
+    "startCreatingButton": "#app > main > section > div > section > div > div.content > section > button",
+    "getStartedButton": "#app > main > section > div > div > div > div > button",
+    "addButton": "#app > main > section > div > div > div > div > button",
+    "stepName": "#stepName",
+    "questionName": "input[id='questionName']",
+    "placeholder": "placeholder",
+    "headerEdit": ".content>ul>li:nth-child(${i})> header > button:nth-child(2)",
+    "headerDelete": ".content>ul>li:nth-child(${i})> header > button:nth-child(3)",
+    "dropArea": ".is-step:nth-child(${i})>.content> ul",
+    "dropAreaItem": ".is-step:nth-child(${i})>.content> ul>div:nth-child(${j})",
+    "elementEdit": ".content>ul>li:nth-child(${i})>div > button:nth-child(${j})",
+    "elementHandler": ".is-step:nth-child(${i})>.content>ul>div:nth-child(${j}) button:nth-child(2)"
+  },
+  "toolBox": {
+    "text": ".toolbox> ul > li:nth-child(1) > div.handle",
+    "selectFromList": ".toolbox> ul > li:nth-child(2) > div.handle",
+    "singleSelection": ".toolbox> ul > li:nth-child(3) > div.handle",
+    "multipleSelection": ".toolbox> ul > li:nth-child(4) > div.handle",
+    "number": ".toolbox> ul > li:nth-child(5) > div.handle",
+    "date": ".toolbox> ul > li:nth-child(6) > div.handle"
+  }
+}
