@@ -1,0 +1,42 @@
+{
+"sidebar":{
+    "homeIcon":"#app > nav > header > a",
+    "createNewReport":"#app > nav > div > ul > li > a",
+    "logout":"#app > nav > section > button"
+},
+"menubar":{
+    "toggleNavigation":"#app > header > div > button:nth-child(1)",
+    "cameraIcon":"#app > header > div > button:nth-child(3)"
+},
+"homepage":{
+    "startBtn":"#app > main > div > span > a"
+},
+"propertypage":{
+    "navReportDetailsTabs":{
+        "propertyTab":"#navReportDetailsTabs > ul > li:nth-child(1) > button",
+        "customerTab":"#navReportDetailsTabs > ul > li:nth-child(2) > button",
+        "reviewTab":"#navReportDetailsTabs > ul > li:nth-child(3) > button"
+    },
+    "propertySearch":{
+        "searchTextBox":".content.active > div > div > input[type=text]",
+        "serchResult":".content.active > ul > li",
+        "propertyItem":".content.active > ul > li:nth-child(1) > button",
+        "propertySave":".content.active > div > section > button",
+        "searchBtn":".content.active > div > button"
+    },
+    "customerDetail":{
+        "contactName":"#contactName",
+        "contactNumber":"#contactNumber",
+        "inspectionDate":"#inspectionDate",
+        "weatherConditions":"#weatherConditions",
+        "customerSave":".content.active > div > span > section > button",
+        "editBtn":".content.active > section > button",
+        "startBtn":".content.active > section > a"
+    },
+    "dampInvestigation":{
+        "controlContainer":".content > .input-container",
+        "previous":"form > div.actions > button:nth-child(1)",
+        "next":"form > div.actions > button"
+    }
+}
+}
