@@ -355,3 +355,96 @@ export class VideoControlModel extends BaseControlModel<string> {
 
     
     }
+
+
+# Grouping Actions with Action Type
+
+	export const logout=createAction({
+		"[Top Menu] Logout"
+	})
+
+## create new file action-type.ts
+
+	import * as AuthActions from './auth.actions';
+	export {AuthActions};
+
+# Ngrx Reducer
+
+	pass old version of state and action, geneate a new version of state
+
+	export interface AuthState{
+		user: User
+	}
+
+	export const initialAuthState:AuthState={
+		user:undefined
+	}
+	export const reducers:ActionReducerMap<AuthState>={
+
+	}
+
+	export const authReducer=createReducer(
+		initialAuthState,
+		on(AuthActions.login, (state,action)=>{
+			return {
+				user:action.user
+			}
+		})
+	)
+
+file auth.module.ts
+
+	static forRoot():ModuleWithProviders {
+		return {
+			ngModule: AuthModule,
+			providers:[AuthService]
+		}
+	}
+
+
+
+## How to Query the Store Data
+
+	set the store in constructor
+
+		constructor(... private store: Store<AppState>){
+			.....
+		}
+
+		ngOnInit(){
+			this.store.subscribe(state=>consold.log(state));
+
+			this.isLoggedIn$=this.store
+				.pipe{
+					map(state=>!!state["auth"].user)
+				}
+		}
+
+		isLoggedIn$:Observable<boolean>;
+		isLoggedOut$:Observable<boolean>;
+
+in html
+		*ngIf="isLoggedOut$ | async"
+
+
+# ngrx Selector (14)
+
+simialar to computed property in vue
+
+		import {createSelector} from '@ngrx/store'
+
+		export const isLoggedIn=createSelector(
+			state=> store["auth"],
+			(auth)=>!! auth.user
+		)
+
+		export const isLoggedOut=createSelector(
+			isLoggedIn,
+			loggedIn=> !isloggedIn
+		)
+
+then in component ngOninit()
+
+		this.isLoggedIn$=this.store.pipe{
+			select(isLoggedin)
+		}
