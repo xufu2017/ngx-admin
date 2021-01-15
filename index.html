@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <select
+        :multiple="multiple === 'true'"
+        v-bind:class="{ 'fix-height': multiple === 'true' }"
+        v-model="sorCodeSelect"
+        v-on:change="updateAddress()"
+      >
+        <option v-for="sorcode in sorCodes" :key="sorcode.id" :value="sorcode.id">
+          {{ sorcode.name }}
+        </option>
+      </select>
+  
+      <br />
+      <table>
+        <tr v-for="(address, index) in addresses" :key="index">
+          <td>{{ address.name }}</td>
+          <td><input type="text" v-model="address.quantity" /></td>
+        </tr>
+      </table>
+      <br/>
+
+      
+    </div>
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+    return {
+      sorCodeSelect: [],
+      multiple: "true",
+      sorCodes: [
+        {
+          id: 1,
+          name: "sample1",
+        },
+        {
+          id: 2,
+          name: "sample2",
+        },
+        {
+          id: 3,
+          name: "sample3",
+        },
+        {
+          id: 4,
+          name: "sample4",
+        },
+        {
+          id: 5,
+          name: "sample5",
+        },
+        {
+          id: 6,
+          name: "sample6",
+        },
+      ],
+      addresses: [],
+    };
+  },
+  methods: {
+    updateAddress() {
+      const existingItems = this.addresses.filter((x) =>
+        this.sorCodeSelect.includes(x.id)
+      );
+      const newItems = this.sorCodeSelect
+        .filter((item) => this.addresses.map((x) => x.id).indexOf(item) == -1)
+        .flatMap((k) => this.sorCodes.filter((m) => m.id == k))
+        .map((address) => ({
+          id: address.id,
+          name: address.name,
+          quantity: 0,
+        }));
+      this.addresses = existingItems.concat(newItems);
+    },
+  }
+
+    })
+</script>
+
+
+</html>
