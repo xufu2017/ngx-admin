@@ -153,3 +153,24 @@ describe('app.vue', () => {
 
     
 });
+
+ErrorLog
+CREATE TABLE [dbo].[Log](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Application] [nvarchar](max) NULL,
+	[MachineName] [nvarchar](max) NULL,
+	[Message] [nvarchar](max) NULL,
+	[MessageTemplate] [nvarchar](max) NULL,
+	[Level] [nvarchar](128) NULL,
+	[TimeStamp] [datetime] NOT NULL,
+	[Exception] [nvarchar](max) NULL,
+	[Properties] [nvarchar](max) NULL,
+	[UserName] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Log] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
