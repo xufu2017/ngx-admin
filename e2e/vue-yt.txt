@@ -1,0 +1,12 @@
+__fr_vue-vben-admin
+__fr_vueuse
+__fr_vue-test-utils-next
+__fr_vue-next
+__fr_vue-composable
+__fr_vue3-antd-admin
+__fr_vite-plugin-components
+__fr_vben-admin-thin-next
+__fr_taro-ui-vue3
+__fr_elenext
+__fr_components
+__fr_ant-design-vue
