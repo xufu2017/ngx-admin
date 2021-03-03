@@ -34,7 +34,24 @@ button.addEventListener('click', function(){
     messageQueueSync();
 });
 
+ public async Task Invoke(HttpContext context)
+        {
+            try
+            {
+                await _next(context);
+            }
+            finally
+            {
+                _logger.LogInformation(
+                    "Request {method} {url} => {statusCode}",
+                    context.Request?.Method,
+                    context.Request?.Path.Value,
+                    context.Response?.StatusCode);
 
+                //context.Request.Body;
+            }
+        }
+ app.UseMiddleware<RequestLoggingMiddleware>();
 
   public class RequestLoggingMiddleware
     {
