@@ -1,0 +1,149 @@
+# usage instruction
+
+-	reference this project in Api project
+	create enviroment variable Application for logging application name
+
+-	modifiy startup.cs in api project
+	-	public void Configure(IApplicationBuilder app)
+			app.UseMiddleware<PostmanMiddleware>();
+
+-	create console app if database not been created
+	-	execute command context.Database.EnsureCreated();
+	-	alternatively, execute following sql (create database if not exists)
+
+			USE [RequestLog]
+			GO
+
+			/****** Object:  Table [dbo].[RequestLog]    Script Date: 03/03/2021 15:01:44 ******/
+			SET ANSI_NULLS ON
+			GO
+
+			SET QUOTED_IDENTIFIER ON
+			GO
+
+			CREATE TABLE [dbo].[RequestLog](
+				[Id] [int] IDENTITY(1,1) NOT NULL,
+				[ApplicationName] [nvarchar](max) NULL,
+				[CreatedOn] [datetime2](7) NOT NULL,
+				[HttpMethod] [nvarchar](max) NULL,
+				[MethodBody] [nvarchar](max) NULL,
+				[Status] [nvarchar](max) NULL,
+				[Path] [nvarchar](max) NULL,
+			 CONSTRAINT [PK_RequestLog] PRIMARY KEY CLUSTERED 
+			(
+				[Id] ASC
+			)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+			) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+			GO
+      
+      using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+using PostmanRequestLog.Data;
+
+namespace PostmanRequestLog
+{
+    public class PostmanMiddleware
+    {
+        private readonly RequestDelegate _next;
+
+        public PostmanMiddleware(RequestDelegate next)
+        {
+            _next = next;
+        }
+
+        public async Task Invoke(HttpContext context)
+        {
+            string requestBodyText = "";
+            using (MemoryStream requestBodyStream = new MemoryStream())
+            {
+                using (MemoryStream responseBodyStream = new MemoryStream())
+                {
+                    Stream originalRequestBody = context.Request.Body;
+                    HttpRequestRewindExtensions.EnableBuffering(context.Request);
+                    Stream originalResponseBody = context.Response.Body;
+
+                    try
+                    {
+                        await context.Request.Body.CopyToAsync(requestBodyStream);
+                        requestBodyStream.Seek(0, SeekOrigin.Begin);
+
+                        requestBodyText = new StreamReader(requestBodyStream).ReadToEnd();
+
+                        requestBodyStream.Seek(0, SeekOrigin.Begin);
+                        context.Request.Body = requestBodyStream;
+
+                        string responseBody = "";
+
+                        context.Response.Body = responseBodyStream;
+
+                        await _next(context);
+
+                        responseBodyStream.Seek(0, SeekOrigin.Begin);
+                        responseBody = new StreamReader(responseBodyStream).ReadToEnd();
+
+                        responseBodyStream.Seek(0, SeekOrigin.Begin);
+
+                        await responseBodyStream.CopyToAsync(originalResponseBody);
+                    }
+                    catch (Exception ex)
+                    {
+                        byte[] data = System.Text.Encoding.UTF8.GetBytes(
+                            "Unhandled Error occured, the error has been logged and the persons concerned are notified!! Please, try again in a while.");
+                        originalResponseBody.Write(data, 0, data.Length);
+                    }
+                    finally
+                    {
+                        context.Request.Body = originalRequestBody;
+                        context.Response.Body = originalResponseBody;
+                    }
+                }
+            }
+
+            var logItem = new RequestLog()
+            {
+                ApplicationName = Environment.GetEnvironmentVariable("Application"),
+                CreatedOn = DateTime.Now,
+                HttpMethod = context.Request?.Method,
+                MethodBody = requestBodyText,
+                Status = context.Response?.StatusCode.ToString(),
+                Path = context.Request?.Path.Value
+            };
+            var requestLogDb = new RequestLogDbContext();
+            requestLogDb.Add(logItem);
+            requestLogDb.SaveChanges();
+        }
+    }
+}
+
+namespace PostmanRequestLog.Data
+{
+    public class RequestLogDbContext : DbContext
+    {
+        public DbSet<RequestLog> RequestLog { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=.;Database=RequestLog;Trusted_Connection=True;");
+        }
+    }
+}
+
+namespace PostmanRequestLog.Data
+{
+    public class RequestLog
+    {
+        public string ApplicationName { get; set; }
+        public int Id { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public string HttpMethod { get; set; }
+        public string MethodBody { get; set; }
+        public string Status { get; set; }
+        public string Path { get; set; }
+    }
+}
+
