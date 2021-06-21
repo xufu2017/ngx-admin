@@ -1,3 +1,6 @@
+const elements=data.map((item)=>Object.assign({},item,DataSchemaOrder.find(x=>x.Id==item.Id)))
+const dampComponents=_.sortBy(elements, o => o.Order)
+
 http://svr-tstsdesk01:90/Sostenuto/web/SUsers/
 
 [Who uses ngx-admin?](https://github.com/akveo/ngx-admin/issues/1645)| [Documentation](https://akveo.github.io/ngx-admin/?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes) | [Installation Guidelines](https://akveo.github.io/ngx-admin/docs/getting-started/what-is-ngxadmin?utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=themes)
