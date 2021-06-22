@@ -1,12 +1,224 @@
-__fr_vue-vben-admin
-__fr_vueuse
-__fr_vue-test-utils-next
-__fr_vue-next
-__fr_vue-composable
-__fr_vue3-antd-admin
-__fr_vite-plugin-components
-__fr_vben-admin-thin-next
-__fr_taro-ui-vue3
-__fr_elenext
-__fr_components
-__fr_ant-design-vue
+Name	Current Order	Preferred Order	notes
+Person present name	1	1	
+Person present contact number	2	2	
+Inspection Date	3	3	
+Weather Conditions	4	4	
+Flashings	5	5	
+Flashings Condition	6	6	
+Roof Finish	7	7	
+Roof Finish Condition	8	8	
+Eaves Construction	9	9	
+Eaves Construction Condition	10	10	
+Gutters	11	11	renamed 'Gutters'
+Gutters free from obstruction?	12	12	renamed 'Gutters free from obstruction?'
+Gutters Condition	13	13	renamed 'Gutters Condition'
+Facia	14	14	
+Facia Condition	15	15	
+Soffits	16	16	
+Soffits Condition	17	17	
+Wall Construction	18	18	
+Wall Construction Condition	19	19	
+Wall Thickness	20	20	
+Wall Thickness Condition	21	21	
+Drainage	22	22	
+Drainage Condition	23	23	
+Damp Proofing	24	24	
+Damp Proofing Condition	25	25	
+Gable End	26	26	
+Gable End Condition	27	27	
+Loft Insulation Depth	28	207	
+Loft Insulation Depth condition	29	208	
+Roof Void condition	30	209	
+Roof Void Usage	31	210	
+Roof Void Felted	32	211	
+Roof Void Defects	33	212	
+Heating	34	41	
+Does heating work?	35	42	
+Secondary Heating	36	44	
+Does secondary heating work?	37	45	
+Bathroom Ventilation	38	137	
+Bathroom Ventilation Condition	39	138	
+Kitchen Ventilation	40	46	
+Kitchen Ventilation Condition	41	47	
+Heat Recovery Ventilation	42	48	
+Heat Recovery Ventilation Condition	43	49	
+Trickle Vents	44	66	
+Trickle Vents Condition	45	67	
+Glazing Type	46	68	
+Is glazing defective?	47	69	
+Frame Type	48	70	
+Are frames defective?	49	71	
+Hallway/Stairs Findings	50	121	
+Hallway/Stairs Recommendations	51	122	
+Hallway/Stairs Restrictions	52	123	
+Hallway/Stairs Cause	53	124	
+Living Room Findings	54	103	
+Living Room Recommendations	55	104	
+Living Room Restrictions	56	105	
+Living Room Cause	57	106	
+Dining Room Findings	58	85	
+Dining Room Recommendations	59	86	
+Dining Room Restrictions	60	87	
+Dining Room Cause	61	88	
+Kitchen Findings	62	50	
+Kitchen Recommendations	63	51	
+Kitchen Restrictions	64	52	
+Kitchen Cause	65	53	
+Bedroom 1 Findings	66	147	
+Bedroom 1 Recommendations	67	148	
+Bedroom 1 Restrictions	68	149	
+Bedroom 1 Cause	69	150	
+Bedroom 2 Findings	70	165	
+Bedroom 2 Recommendations	71	166	
+Bedroom 2 Restrictions	72	167	
+Bedroom 2 Cause	73	168	
+Bedroom 3 Findings	74	183	
+Bedroom 3 Recommendations	75	184	
+Bedroom 3 Restrictions	76	185	
+Bedroom 3 Cause	77	186	
+WC/Bathroom Findings	78	133	
+WC/Bathroom Recommendations	79	134	
+WC/Bathroom Restrictions	80	135	
+WC/Bathroom Cause	81	136	
+Utility Room Findings	82	73	
+Utility Room Recommendations	83	74	
+Utility Room Restrictions	84	75	
+Utility Room Cause	85	76	
+Other Room Findings	86	201	
+Other Room Recommendations	87	202	
+Other Room Restrictions	88	203	
+Other Room Cause	89	204	
+Customer Contributory Actions To Condensation	90	61	
+No Protimeter Reading	91	62	
+Protimeter Reading	92	63	
+No Dew Point Reading	93	64	
+Dew Point Reading	94	65	
+No Gas Meter Reading	95	57	
+Gas Meter Reading	96	58	
+No Electric Meter Reading	97	59	
+Electric Meter Reading	98	60	
+Leaflet Issued	99	216	
+Referral For Fuel Poverty Advice	100	217	
+Referral For Rehousing - Overoccupation	101	218	
+Other Information And Guidance Issued To Customer	102	219	
+Humidistat Offered, Authorisation Signed And Fitted On Visit	103	220	
+Humidistat Offered And Refused By Customer	104	221	
+Referral For Third Party Report i.e. Environment	105	222	
+Photograph - Images	106	223	
+Waste Pipes	new	28	
+Waste pipes free from obstruction?	new	29	
+Waste Pipes Condition	new	30	
+Soil Pipes	new	31	
+Soil pipes free from obstruction?	new	32	
+Soil Pipes Condition	new	33	
+Fall Pipes	new	34	
+Fall pipes free from obstruction?	new	35	
+Fall Pipes Condition	new	36	
+External Air Bricks	new	37	if selectlist, we need the options
+External Door Seal Condition	new	38	
+External Threshhold Condition	new	39	
+External images	new	40	
+Kitchen Inspection Outcome	new	54	if selectlist, we need the options
+Data Logger Required	new	215	yes or no
+Hallway/Stairs Mould Location	new	125	if selectlist, we need the options
+Living Room Mould Location	new	107	if selectlist, we need the options
+Dining Room Mould Location	new	89	if selectlist, we need the options
+Kitchen Mould Location	new	55	if selectlist, we need the options
+Bedroom 1 Mould Location	new	151	if selectlist, we need the options
+Bedroom 2 Mould Location	new	169	if selectlist, we need the options
+Bedroom 3 Mould Location	new	187	if selectlist, we need the options
+WC/bathroom Mould Location	new	139	if selectlist, we need the options
+Utility Room Mould Location	new	77	if selectlist, we need the options
+Other Room Mould Location	new	205	if selectlist, we need the options
+Hallway/Stairs Mould Size	new	126	
+Living Room Mould Size	new	108	
+Dining Room Mould Size	new	90	
+Kitchen Mould Size	new	56	
+Bedroom 1 Mould Size	new	152	
+Bedroom 2 Mould Size	new	170	
+Bedroom 3 Mould Size	new	188	
+WC/bathroom Mould Size	new	140	
+Utility Room Mould Size	new	78	
+Other Room Mould Size	new	206	
+Boiler Comments	new	43	
+kitchen images	new	72	
+utility room - no protimeter reading	new	79	
+utility room - protimeter reading	new	80	
+utility room - no dew point reading	new	81	
+utility room - dew point reading	new	82	
+utility room- customer contributory actions to condensation	new	83	
+utility room images	new	84	
+dining room - no protimeter reading	new	91	
+dining room - protimeter reading	new	92	
+dining room - no dew point reading	new	93	
+dining room - dew point reading	new	94	
+dining room - trickle vents	new	95	
+dining room- trickle vents condtion 	new	96	
+dining room- glazing type	new	97	
+dining room - is glazing defective	new	98	
+dining room - frame type	new	99	
+dining room- are frames defective	new	100	
+dining room- customer contributory actions to condensation	new	101	
+dining room images	new	102	
+living room - no protimeter reading	new	109	
+living room - protimeter reading	new	110	
+living room - no dew point reading	new	111	
+living room - dew point reading	new	112	
+living room - trickle vents	new	113	
+living room - trickle vents condition	new	114	
+living room - glazing type	new	115	
+living room - is glazing defective	new	116	
+living room - frame type	new	117	
+living room - are frames defective	new	118	
+living room - customer contributory actions to condensation	new	119	
+living room images	new	120	
+hallway/stairs- no protimeter reading	new	127	
+hallway/stairs-protimeter reading	new	128	
+hallway/stairs- no dew point reading	new	129	
+hallway/stairs- dew point reading	new	130	
+hallway/stairs- customer contributory actions to condensation	new	131	
+hallway/stairs - images	new	132	
+WC/Bathroom - no protimeter reading	new	141	
+WC/Bathroom - protimeter reading	new	142	
+WC/Bathroom - no dew point reading	new	143	
+WC/Bathroom- dew point reading	new	144	
+WC/Bathroom - Customer contributory actions to condensation	new	145	
+WC/Bathroom- Images	new	146	
+Bedroom 1- no protimeter reading	new	153	
+Bedroom 1 - protimeter reading	new	154	
+Bedroom 1 - no dew point reading	new	155	
+Bedroom 1 - dew point reading	new	156	
+bedroom 1 - trickle vents	new	157	
+bedroom 1 - trickle vents condition	new	158	
+bedroom 1 - glazing type	new	159	
+bedroom 1 - is glazing defective	new	160	
+bedroom 1  - frame type	new	161	
+bedroom 1 - are frames defective	new	162	
+bedroom 1 - Customer contributory actions to condensation	new	163	
+bedroom 1 - images	new	164	
+bedroom 2 - no protimeter reading	new	171	
+bedroom 2- protimeter reading	new	172	
+bedroom 2- no dew point reading	new	173	
+bedroom 2 - dew point reading	new	174	
+bedroom 2 - trickle vents	new	175	
+bedroom 2 - trickle vents condition	new	176	
+bedroom 2 - glazing type	new	177	
+bedroom 2 - is glazing type defective	new	178	
+bedroom 2 - frame type	new	179	
+bedroom 2 - are frames defective	new	180	
+bedroom 2 - customer contributory actions to condensation	new	181	
+bedroom 2 - images	new	182	
+bedroom 3 - no protimeter reading	new	189	
+bedroom 3 - protimeter reading	new	190	
+bedroom 3 - no dew point reading	new	191	
+bedroom 3 - dew point reading	new	192	
+bedroom 3 - trickle vents	new	193	
+bedroom 3 - trickle vents condition	new	194	
+bedroom 3 - glazing type	new	195	
+bedroom 3 - is glazing defective	new	196	
+bedroom 3 - frame type	new	197	
+bedroom 3 - are frames defective	new	198	
+bedroom 3 - Customer contributory actions to condensation	new	199	
+bedroom 3 - images	new	200	
+loft hatch condition	new	213	
+loft images	new	214	
