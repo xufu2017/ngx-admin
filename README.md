@@ -154,23 +154,84 @@ describe('app.vue', () => {
     
 });
 
-ErrorLog
-CREATE TABLE [dbo].[Log](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Application] [nvarchar](max) NULL,
-	[MachineName] [nvarchar](max) NULL,
-	[Message] [nvarchar](max) NULL,
-	[MessageTemplate] [nvarchar](max) NULL,
-	[Level] [nvarchar](128) NULL,
-	[TimeStamp] [datetime] NOT NULL,
-	[Exception] [nvarchar](max) NULL,
-	[Properties] [nvarchar](max) NULL,
-	[UserName] [nvarchar](max) NULL,
- CONSTRAINT [PK_Log] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
+{
+  "name": "assets-portal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "lint/no-fix": "vue-cli-service lint --no-fix",
+    "test": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "gsap": "^3.6.1",
+    "lodash": "^4.17.21",
+    "oidc-client": "1.10.1",
+    "register-service-worker": "^1.7.1",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-moment": "^4.1.0",
+    "vue-popperjs": "^2.3.0",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.2.0",
+    "vue-toasted": "^1.1.28",
+    "vuex": "^3.4.0",
+    "vuex-class": "^0.3.2",
+    "vee-validate": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.9.1",
+    "@types/lodash": "^4.14.169",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "@vue/test-utils": "^1.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.2.9",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "typescript": "~4.1.5",
+    "vue-template-compiler": "^2.6.11",
+    "babel-eslint": "^10.1.0",
+    "reflect-metadata": "^0.1.13",
+    "axios-mock-adapter": "1.18.2",
+    "flush-promises": "^1.0.2",
+    "ts-jest": "^26.3.0",
+    "vue-jest": "3.0.7",
+    "jest-serializer-vue": "2.0.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "transform": {
+    "vee-validate/dist/rules": "babel-jest"
+  },
+  "transformIgnorePatterns": [
+    "<rootDir>/node_modules/(?!vee-validate/dist/rules)"
+  ]
+}
 
 
