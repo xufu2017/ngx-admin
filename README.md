@@ -1,9 +1,4 @@
-https://us04web.zoom.us/j/4934458491?pwd=NTB1OXJ3cmQzZEtEeWVvMVJuWUc1QT09
-
-
-http://svr-tstsdesk01:90/Sostenuto/web/SUsers/
-
-https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_NWE3MjEwYWMtNWE4My00ZGE3LTgzMWMtYmNjOTIzOTNjMzQ2%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%252206b84121-5f0a-4b49-ba2d-7738f681dd70%2522%252c%2522Oid%2522%253a%25228449ace5-1904-44fd-ba80-60dff3daf749%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=9dd3282e-1be4-4a83-a93d-de6bf02ebee4&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true
+https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_NWE3MjEwYWMtNWE4My00ZGE3LTgzMWMtYmNjOTIzOTNjMzQ2%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%252206b84121-5f0a-4b49-ba2d-7738f681dd70%2522%252c%2522Oid%2522%253a%25228449ace5-1904-44fd-ba80-60dff3daf749%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=b9c72094-fa2c-46fc-87ea-36434bba3ad1&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true
 
 # Admin template based on Angular 8+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=main_pic"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
