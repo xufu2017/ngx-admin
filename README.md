@@ -1,26 +1,5 @@
-        public string PrintValueByDivisionOfThreeAndFive(int number)
-        {
-            var result = "";
+https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_OWRhZmIzNzctMDljOC00MjgyLTk4OTItZjY0MTc4NmExYjVl%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%252206b84121-5f0a-4b49-ba2d-7738f681dd70%2522%252c%2522Oid%2522%253a%25228449ace5-1904-44fd-ba80-60dff3daf749%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=51a8daba-18be-484f-ae43-d752a8d7d3a0&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true
 
-            if (number % 3 == 0 && number % 5 == 0)
-            {
-                result = "AB";
-            }
-            else if (number % 3 == 0)
-            {
-                result = "A";
-            }
-            else if (number % 5 == 0)
-            {
-                result = "B";
-            }
-            else
-            {
-                result = "Financial";
-            }
-
-            return result;
-        }
 # Admin template based on Angular 8+ and <a href="https://github.com/akveo/nebular">Nebular</a>
 <a target="_blank" href="http://akveo.com/ngx-admin/pages/dashboard?theme=corporate&utm_source=github&utm_medium=ngx_admin_readme&utm_campaign=main_pic"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
